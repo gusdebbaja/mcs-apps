@@ -33,8 +33,13 @@ public class AppController {
     @ResponseBody
     public Response pingL() {
         try {
+            String linuxAppUrl = System.getenv("LINUX_APP_URL");
+            if (linuxAppUrl == null) {
+                linuxAppUrl = "http://linux-app-url:5000";
+            }
+            
             ResponseEntity<PingResponse> response = restTemplate.postForEntity(
-                "http://192.168.1.111/api/ping", null, PingResponse.class);
+                linuxAppUrl + "/api/ping", null, PingResponse.class);
             
             return new Response("success", response.getBody());
         } catch (Exception e) {

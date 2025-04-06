@@ -18,7 +18,7 @@ def ping_w():
 @app.route('/ping-k', methods=['POST'])
 def ping_k():
     try:
-        response = requests.post('http://k8s-app-url/api/ping')
+        response = requests.post('http://k8s-app.local:5005/api/ping')
         return jsonify({"status": "success", "message": response.json()})
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)})
