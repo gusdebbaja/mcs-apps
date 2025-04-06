@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Java App (K) - Kubernetes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #e74c3c;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Java App (K) - Kubernetes</h1>
+    <div class="buttons">
+        <button onclick="pingApp('l')">Ping Linux App (L)</button>
+        <button onclick="pingApp('w')">Ping Windows App (W)</button>
+        <button onclick="getCatFact()">Get Cat Fact</button>
+    </div>
+    <div id="response">
+        <p>Response will appear here...</p>
+    </div>
+
+    <script>
+        function pingApp(target) {
+            document.getElementById('response').innerHTML = 'Loading...';
+            
+            let endpoint = '';
+            if (target === 'l') {
+                endpoint = '/api/ping-l';
+            } else if (target === 'w') {
+                endpoint = '/api/ping-w';
+            }
+            
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').innerHTML = 
+                    '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+                document.getElementById('response').innerHTML = 
+                    '<p style="color: red;">Error: ' + error + '</p>';
+            });
+        }
+        
+        function getCatFact() {
+            document.getElementById('response').innerHTML = 'Loading...';
+            
+            fetch('/api/cat-fact')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').innerHTML = 
+                    '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+                document.getElementById('response').innerHTML = 
+                    '<p style="color: red;">Error: ' + error + '</p>';
+            });
+        }
+    </script>
+</body>
+</html>

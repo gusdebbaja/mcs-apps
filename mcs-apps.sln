@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows-app", "windows-app", "{6EB328DF-219A-878A-0974-07AE6A24F0A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WApp", "windows-app\WApp\WApp.csproj", "{C36EEBA2-F633-5C8A-3194-8459B09A6786}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C36EEBA2-F633-5C8A-3194-8459B09A6786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36EEBA2-F633-5C8A-3194-8459B09A6786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36EEBA2-F633-5C8A-3194-8459B09A6786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36EEBA2-F633-5C8A-3194-8459B09A6786}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C36EEBA2-F633-5C8A-3194-8459B09A6786} = {6EB328DF-219A-878A-0974-07AE6A24F0A0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E2827BC-0C7B-4C0C-A917-589DA06B85C1}
+	EndGlobalSection
+EndGlobal
