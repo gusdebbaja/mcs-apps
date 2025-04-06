@@ -22,7 +22,7 @@ spec:
         - containerPort: 8080
         env:
         - name: LINUX_APP_URL
-          value: "http://192.168.1.111:5000"
+          value: "http://192.168.122.162:5000"
         resources:
           limits:
             cpu: "500m"
