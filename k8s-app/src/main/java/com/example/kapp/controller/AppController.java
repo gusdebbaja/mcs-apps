@@ -34,7 +34,7 @@ public class AppController {
     public Response pingL() {
         try {
             ResponseEntity<PingResponse> response = restTemplate.postForEntity(
-                "http://linux-app-url/api/ping", null, PingResponse.class);
+                "http://192.168.1.111/api/ping", null, PingResponse.class);
             
             return new Response("success", response.getBody());
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class AppController {
     public Response pingW() {
         try {
             ResponseEntity<PingResponse> response = restTemplate.postForEntity(
-                "http://windows-app-url/api/ping", null, PingResponse.class);
+                "http://Windows-Omni-1/api/ping", null, PingResponse.class);
             
             return new Response("success", response.getBody());
         } catch (Exception e) {

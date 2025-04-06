@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: kapp
-        image: kind-registry:5000/kapp:latest
+        image: localhost:5002/kapp:latest
+        imagePullPolicy: Never
         ports: 
         - containerPort: 8080
         resources:

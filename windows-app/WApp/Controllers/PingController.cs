@@ -29,7 +29,7 @@ namespace WApp.Controllers
             try
             {
                 var client = _clientFactory.CreateClient();
-                var response = await client.PostAsync("http://linux-app-url/api/ping", null);
+                var response = await client.PostAsync("http://192.168.1.111/api/ping", null);
 
                 response.EnsureSuccessStatusCode();
                 var content = await response.Content.ReadAsStringAsync();
